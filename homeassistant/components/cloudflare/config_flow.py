@@ -45,7 +45,7 @@ def _records_schema(records: Optional[List] = None):
     records_dict = {}
 
     if records:
-        records_dict = {name for name in records}
+        records_dict = {name: name for name in records}
 
     return vol.Schema({vol.Required(CONF_RECORDS): cv.multi_select(records_dict)})
 
